@@ -55,11 +55,11 @@ class AbstractingTest extends TestCase
 	{
 		
 		$data = ["book" =>
-				    [
-				     "title" => "Oliver Twist",
-					 "author" => "Charles Dickens",
-				    ]
-			    ];
+				  [
+				    "title" => "Oliver Twist",
+				    "author" => "Charles Dickens",
+				  ]
+			];
 		
 		$encoder = $builder->createEncoder();
 		
@@ -100,9 +100,9 @@ class AbstractingTest extends TestCase
 		$data = ["book" =>
 				    [
 				     "title" => "Oliver Twist",
-					 "author" => "Charles Dickens",
+				      "author" => "Charles Dickens",
 				    ]
-			    ];
+			];
 				
 		$this->assertSame($arr,$data);		
 	}				

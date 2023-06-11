@@ -14,8 +14,8 @@ class Player
 
 	public function printWelcomeMessage(string $playerName,string $playerPosition,Team $team):string 
 	{
-			$playerTeam = $team->name;
+	  $playerTeam = $team->name;
 			
-			$team->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,playerTeam:(string)playerTeam);
-    }		
+	   $team->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,playerTeam:(string)playerTeam);
+        }		
  }

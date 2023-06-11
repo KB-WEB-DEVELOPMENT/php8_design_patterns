@@ -12,7 +12,7 @@ class Student
 	){}
 	
 	public function getStudentInfos(): string 
-	  {
-        return 'Name:' . $this->name . ' , Ranking:' . $this->ranking;
-    }
+	{
+           return 'Name:' . $this->name . ' , Ranking:' . $this->ranking;
+    	}
 }

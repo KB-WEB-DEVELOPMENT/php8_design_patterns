@@ -40,7 +40,7 @@ class MenuDayBuilder implements Builder
 	}
 	
 	public function getSustenance(): Sustenance
-    {
+        {
 		return $this->menuDay;
 	}
  }

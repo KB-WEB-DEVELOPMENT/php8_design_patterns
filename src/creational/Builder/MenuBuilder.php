@@ -40,7 +40,7 @@ class MenuBuilder implements Builder
 	}
 	
 	public function getSustenance(): Sustenance
-    {
+        {
 		return $this->menu;
 	}
  }

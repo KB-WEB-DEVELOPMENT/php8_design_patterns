@@ -11,92 +11,85 @@ use PHPUnit\Framework\TestCase;
 
 class ProxyTest extends TestCase
 {
-	
-	public function testIsFileLocal():void
-	{
-		
-		$fr = new FilesReader('/test/ProxyTest.php');
+   public function testIsFileLocal():void
+   {
+      $fr = new FilesReader('/test/ProxyTest.php');
 
-		$isLocal = $fr->isLocalFile();
+      $isLocal = $fr->isLocalFile();
 		
-		$this->assertTrue($isLocal);
+      $this->assertTrue($isLocal);
 				
+   }
+	
+   public function testIsReadableFile():void
+   {
+     $fr = new FilesReader('/test/ProxyTest.php');
+	
+     $isReadable = $fr->isReadable();
+	
+     $this->assertTrue($isReadable);
+   }
+	
+   public function testCanGetFileInfos():void
+   {
+      $fr = new FilesReader('/www/htdocs/inc/lib.inc.php');
+		
+      $fileInfosArray = $fr->getFileInfos();
+		
+      $exp = [ 
+	  'dirname' => '/www/htdocs/inc',
+	  'basename' => 'lib.inc.php',
+          'extension' => 'php',
+	  'filename' => 'lib.inc',
+	  'filesize' => 80
+      ]; 
+			
+       $this->assertSame($exp,$fileInfosArray);	
+	
     }
 	
-	public function testIsReadableFile():void
-	{
-		$fr = new FilesReader('/test/ProxyTest.php');
+    public function testCanCopyRemoteFile():void
+    {	
+        $fr = new FilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php');
 	
-		$isReadable = $fr->isReadable();
-	
-		$this->assertTrue($isReadable);
-	}
-	
-	public function testCanGetFileInfos():void
-	{
-		$fr = new FilesReader('/www/htdocs/inc/lib.inc.php');
+	// file results.php from above url copied to current directory 
+	$res = $fr->copyRemoteFile();
 		
-		$fileInfosArray = $fr->getFileInfos();
-		
-		$exp = [ 
-			'dirname' => '/www/htdocs/inc',
-			'basename' => 'lib.inc.php',
-			'extension' => 'php',
-			'filename' => 'lib.inc',
-			'filesize' => 80
-		]; 
-			
-		$this->assertSame($exp,$fileInfosArray);	
-	
-	}
-	
-	public function testCanCopyRemoteFile():void
-	{
-		
-		$fr = new FilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php');
-	
-		// file results.php from above url copied to current directory 
-		$res = $fr->copyRemoteFile();
-		
-		$this->assertTrue($res);
-	
-	}
+	$this->assertTrue($res);	
+    }
 	
 	public function testCanGetLocalFileInfos():void
 	{
-		$cf = new CachedFilesReader('file2.php',new FilesReader('file2.php'));
+	   $cf = new CachedFilesReader('file2.php',new FilesReader('file2.php'));
 		
-		$fileInfosArray = $cf->getFilesInfos();
+	   $fileInfosArray = $cf->getFilesInfos();
 		
-		$exp = [ 
-			'dirname' => 'directory path from root server to file2.php',
-			'basename' => 'file2.php',
-			'extension' => 'php',
-			'filename' => 'file2',
-			'filesize' => 10
-		];		
+	   $exp = [ 
+		'dirname' => 'directory path from root server to file2.php',
+		'basename' => 'file2.php',
+		'extension' => 'php',
+		'filename' => 'file2',
+		'filesize' => 10
+	    ];		
 	
-		$this->assertSame($exp,$fileInfosArray);
+	    $this->assertSame($exp,$fileInfosArray);
 	
 	}
 	
 	public function testCanGetRemoteFileInfos():void
 	{
-	
-		$cf = new CachedFilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php',new FilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php'));
+	    $cf = new CachedFilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php',new FilesReader('https://github.com/KB-WEB-DEVELOPMENT/travelpayouts-api-cheapest-tickets-finder/blob/master/results.php'));
 		
-		$fileInfosArray = $cf->getFilesInfos();
+	    $fileInfosArray = $cf->getFilesInfos();
 		
-		$exp = [ 
-			'dirname' => 'directory path from root server to results.php',
-			'basename' => 'results.php',
-			'extension' => 'php',
-			'filename' => 'results',
-			'filesize' => 567
-		];	
+	     $exp = [ 
+		 'dirname' => 'directory path from root server to results.php',
+		 'basename' => 'results.php',
+		 'extension' => 'php',
+		 'filename' => 'results',
+		 'filesize' => 567
+	     ];	
 	
-	    $this->assertSame($exp,$fileInfosArray);
-	
-	}	
-	
+	    $this->assertSame($exp,$fileInfosArray);	
+	}		
 }	

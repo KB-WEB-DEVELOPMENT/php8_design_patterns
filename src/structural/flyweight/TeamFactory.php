@@ -7,26 +7,26 @@ namespace php8_design_patterns\Structural\Flyweight;
 class TeamFactory 
 {
 	public function __construct(
-		private array $playersArray
+	  private array $playersArray
 	){}
 
     public function addPlayer(string $playerName,string $playerPosition,Team $team): array
-	{
-		$newPlayer = new Player(playerName:$playerName,playerPosition:$playerPosition,Team:$team);
+    {   
+	$newPlayer = new Player(playerName:$playerName,playerPosition:$playerPosition,Team:$team);
 		
         $this->playersArray[] = $newPlayer;
 		
-		return $this->playersArray;
+	return $this->playersArray;
     }
 
-	public function printWelcomeMessage():string
-	{	
-				$newestPlayer = end($this->playersArray);
+    public function printWelcomeMessage():string
+    {	
+       $newestPlayer = end($this->playersArray);
 				
-		   		$playerName = (string)$newestPlayer->playerName;
-				$playerPosition = (string)$newestPlayer->playerPosition;
-				$team = $newestPlayer->team;
-				
-				$newestPlayer->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,Team: (string)$team);				
-	}
+       $playerName = (string)$newestPlayer->playerName;
+       $playerPosition = (string)$newestPlayer->playerPosition;
+       $team = $newestPlayer->team;
+        
+       $newestPlayer->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,Team: (string)$team);				
+     }
  }

@@ -14,47 +14,45 @@ class FlyweightTest extends TestCase
 {	
 	public function testCanAddNewPlayerToExistingTeam():void
 	{
-				$playersArray = [];
+	  $playersArray = [];
 				
-				$team = new Team(teamName:'Real Madrid');
+	  $team = new Team(teamName:'Real Madrid');
 				
-				$teamFactory = new TeamFactory(playersArray:$playersArray);
+	  $teamFactory = new TeamFactory(playersArray:$playersArray);
 				
-				$playersArray[] = $teamFactory->addPlayer(playerName:'Joe Doe',playerPosition:'Forward',Team:$team);
+	  $playersArray[] = $teamFactory->addPlayer(playerName:'Joe Doe',playerPosition:'Forward',Team:$team);
 								
-				$expArray = ['Joe Doe','Forward','Real Madrid'];
+	  $expArray = ['Joe Doe','Forward','Real Madrid'];
 												
-		        $this->assertSame($expArray,$playersArray);						
+	  $this->assertSame($expArray,$playersArray);						
 	}			
 
 	public function testCanPrintWelcomeMessage():void
 	{
-	
-		$playersArray = [
-			[
-				'John Doe',
-				'forward',
-				new Team(teamName:'Real Madrid')
-			],
-			[
-				'Mark Blah',
-				'defender',
-				new Team(teamName:'FC Barcelona')
-			],
-			[
-				'Dennis Last',
-				'midfielder',
-				new Team(teamName:'Manchester City')
-			],
-		];
+	  $playersArray = [
+		[
+		  'John Doe',
+		  'forward',
+		   new Team(teamName:'Real Madrid')
+		],
+		[
+		  'Mark Blah',
+		  'defender',
+		   new Team(teamName:'FC Barcelona')
+		],
+		[
+		  'Dennis Last',
+		  'midfielder',
+		   new Team(teamName:'Manchester City')
+		],
+	  ];
 
-		$teamFactory = new TeamFactory(playersArray:$playersArray);
+	  $teamFactory = new TeamFactory(playersArray:$playersArray);
 		
-		$msg = $teamFactory->printWelcomeMessage();
+	  $msg = $teamFactory->printWelcomeMessage();
 		
-		$exp_msg = 'Welcome to the midfielder Dennis Last at Manchester City';
+	  $exp_msg = 'Welcome to the midfielder Dennis Last at Manchester City';
 	
-        $this->assertSame($exp_msg,$msg);		
-	}
-	
+          $this->assertSame($exp_msg,$msg);		
+	}	
 }

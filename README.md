@@ -5,6 +5,7 @@ Repository with application examples of the most common design patterns.
 PHPUnit tests for each pattern are included.
 
 Creational Design Patterns
+---------------------------
 
 (1) Factory Method
 
@@ -17,6 +18,7 @@ Creational Design Patterns
 (5) Singleton
 
 Structural Design Patterns
+--------------------------
 
 (6) Adapter
 
@@ -33,6 +35,7 @@ Structural Design Patterns
 (12) Proxy
 
 Behavioral Design Patterns
+--------------------------
 
 (13) Chain of Responsability
 

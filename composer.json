@@ -8,86 +8,86 @@
 		"name": "Kâmi <KB-WEB-DEVELOPMENT> Barut-Wanayo",
 		"email": "kamibarut@yahoo.com"
 	}],
-    "require": {
-	  "php": ">= 8.0" 
-    },
-    "autoload":	{
-		"psr-4": {
-			"php8_design_patterns\\Creational\\Abstracting\\": "src/creational/abstracting/",
-			"php8_design_patterns\\Creational\\Abstracting\\Tests\\": "src/creational/abstracting/tests/",
+        "require": {
+	"php": ">= 8.0" 
+        },
+        "autoload":	{
+	   "psr-4": {
+		 "php8_design_patterns\\Creational\\Abstracting\\": "src/creational/abstracting/",
+		 "php8_design_patterns\\Creational\\Abstracting\\Tests\\": "src/creational/abstracting/tests/",
 			
-			"php8_design_patterns\\Creational\\Builder\\": "src/creational/builder/",
-			"php8_design_patterns\\Creational\\Builder\\Components\\": "src/creational/builder/components/",
-			"php8_design_patterns\\Creational\\Builder\\Tests\\": "src/creational/builder/tests/",
+		 "php8_design_patterns\\Creational\\Builder\\": "src/creational/builder/",
+		 "php8_design_patterns\\Creational\\Builder\\Components\\": "src/creational/builder/components/",
+		 "php8_design_patterns\\Creational\\Builder\\Tests\\": "src/creational/builder/tests/",
 			
-			"php8_design_patterns\\Creational\\Factory\\": "src/creational/factory/",
-			"php8_design_patterns\\Creational\\Factory\\Tests\\": "src/creational/factory/tests/",
+		 "php8_design_patterns\\Creational\\Factory\\": "src/creational/factory/",
+		 "php8_design_patterns\\Creational\\Factory\\Tests\\": "src/creational/factory/tests/",
 			
-			"php8_design_patterns\\Creational\\Prototype\\": "src/creational/prototype/",
-			"php8_design_patterns\\Creational\\Prototype\\Tests\\": "src/creational/prototype/tests/",
+		 "php8_design_patterns\\Creational\\Prototype\\": "src/creational/prototype/",
+		 "php8_design_patterns\\Creational\\Prototype\\Tests\\": "src/creational/prototype/tests/",
 			
-			"php8_design_patterns\\Creational\\Singleton\\": "src/creational/singleton/",
-			"php8_design_patterns\\Creational\\Singleton\\Tests\\": "src/creational/singleton/tests/", 			
+		 "php8_design_patterns\\Creational\\Singleton\\": "src/creational/singleton/",
+		 "php8_design_patterns\\Creational\\Singleton\\Tests\\": "src/creational/singleton/tests/", 			
 			
-			"php8_design_patterns\\Structural\\Adapter\\": "src/structural/adapter/",
-			"php8_design_patterns\\Structural\\Adapter\\Tests\\": "src/structural/adapter/tests/",
+		 "php8_design_patterns\\Structural\\Adapter\\": "src/structural/adapter/",
+		 "php8_design_patterns\\Structural\\Adapter\\Tests\\": "src/structural/adapter/tests/",
 						
-			"php8_design_patterns\\Structural\\Bridge\\": "src/structural/bridge/",
-			"php8_design_patterns\\Structural\\Bridge\\Tests\\": "src/structural/bridge/tests/",
+		 "php8_design_patterns\\Structural\\Bridge\\": "src/structural/bridge/",
+		 "php8_design_patterns\\Structural\\Bridge\\Tests\\": "src/structural/bridge/tests/",
 						
-			"php8_design_patterns\\Structural\\Composite\\": "src/structural/composite/",
-			"php8_design_patterns\\Structural\\Composite\\Tests\\": "src/structural/composite/tests/",
+		 "php8_design_patterns\\Structural\\Composite\\": "src/structural/composite/",
+		 "php8_design_patterns\\Structural\\Composite\\Tests\\": "src/structural/composite/tests/",
 			
-			"php8_design_patterns\\Structural\\Decorator\\": "src/structural/decorator/",
-			"php8_design_patterns\\Structural\\Decorator\\Tests\\": "src/structural/decorator/tests/",
+		 "php8_design_patterns\\Structural\\Decorator\\": "src/structural/decorator/",
+		 "php8_design_patterns\\Structural\\Decorator\\Tests\\": "src/structural/decorator/tests/",
 			
-			"php8_design_patterns\\Structural\\Facade\\": "src/structural/facade/",
-			"php8_design_patterns\\Structural\\Facade\\Tests\\": "src/structural/facade/tests/",
+		 "php8_design_patterns\\Structural\\Facade\\": "src/structural/facade/",
+		 "php8_design_patterns\\Structural\\Facade\\Tests\\": "src/structural/facade/tests/",
 			
-			"php8_design_patterns\\Structural\\Flyweight\\": "src/structural/flyweight/",
-			"php8_design_patterns\\Structural\\Flyweight\\Tests\\": "src/structural/flyweight/tests/",
+		 "php8_design_patterns\\Structural\\Flyweight\\": "src/structural/flyweight/",
+		 "php8_design_patterns\\Structural\\Flyweight\\Tests\\": "src/structural/flyweight/tests/",
 			
-			"php8_design_patterns\\Structural\\Proxy\\": "src/structural/proxy/",
-            "php8_design_patterns\\Structural\\Proxy\\Tests\\": "src/structural/proxy/tests/",			
+		 "php8_design_patterns\\Structural\\Proxy\\": "src/structural/proxy/",
+                 "php8_design_patterns\\Structural\\Proxy\\Tests\\": "src/structural/proxy/tests/",			
 			
-			"php8_design_patterns\\Behavioral\\CoR\\": "src/behavioral/cor/",
-			"php8_design_patterns\\Behavioral\\CoR\\Tests\\": "src/behavioral/cor/tests/",
+		 "php8_design_patterns\\Behavioral\\CoR\\": "src/behavioral/cor/",
+		 "php8_design_patterns\\Behavioral\\CoR\\Tests\\": "src/behavioral/cor/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Command\\": "src/behavioral/command/",
-			"php8_design_patterns\\Behavioral\\Command\\Tests\\": "src/behavioral/command/tests/",
+		 "php8_design_patterns\\Behavioral\\Command\\": "src/behavioral/command/",
+		 "php8_design_patterns\\Behavioral\\Command\\Tests\\": "src/behavioral/command/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Iterator\\": "src/behavioral/iterator/",
-			"php8_design_patterns\\Behavioral\\Iterator\\Tests\\": "src/behavioral/iterator/tests/",
+		 "php8_design_patterns\\Behavioral\\Iterator\\": "src/behavioral/iterator/",
+		 "php8_design_patterns\\Behavioral\\Iterator\\Tests\\": "src/behavioral/iterator/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Mediator\\": "src/behavioral/mediator/",
-			"php8_design_patterns\\Behavioral\\Mediator\\Tests\\": "src/behavioral/mediator/tests/",
+		 "php8_design_patterns\\Behavioral\\Mediator\\": "src/behavioral/mediator/",
+		 "php8_design_patterns\\Behavioral\\Mediator\\Tests\\": "src/behavioral/mediator/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Memento\\": "src/behavioral/memento/",
-			"php8_design_patterns\\Behavioral\\Memento\\Tests\\": "src/behavioral/memento/tests/",
+		 "php8_design_patterns\\Behavioral\\Memento\\": "src/behavioral/memento/",
+		 "php8_design_patterns\\Behavioral\\Memento\\Tests\\": "src/behavioral/memento/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Observer\\": "src/behavioral/observer/",
-			"php8_design_patterns\\Behavioral\\Observer\\Tests\\": "src/behavioral/observer/tests/",
+		 "php8_design_patterns\\Behavioral\\Observer\\": "src/behavioral/observer/",
+		 "php8_design_patterns\\Behavioral\\Observer\\Tests\\": "src/behavioral/observer/tests/",
 			
-			"php8_design_patterns\\Behavioral\\State\\": "src/behavioral/state/",
-			"php8_design_patterns\\Behavioral\\State\\Tests\\": "src/behavioral/state/tests/",
+		 "php8_design_patterns\\Behavioral\\State\\": "src/behavioral/state/",
+		 "php8_design_patterns\\Behavioral\\State\\Tests\\": "src/behavioral/state/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Stategy\\": "src/behavioral/strategy/",
-			"php8_design_patterns\\Behavioral\\Stategy\\Tests\\": "src/behavioral/strategy/tests/",
+		 "php8_design_patterns\\Behavioral\\Stategy\\": "src/behavioral/strategy/",
+		 "php8_design_patterns\\Behavioral\\Stategy\\Tests\\": "src/behavioral/strategy/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Template\\": "src/behavioral/template/",
-			"php8_design_patterns\\Behavioral\\Template\\Tests\\": "src/behavioral/template/tests/",
+		 "php8_design_patterns\\Behavioral\\Template\\": "src/behavioral/template/",
+		 "php8_design_patterns\\Behavioral\\Template\\Tests\\": "src/behavioral/template/tests/",
 			
-			"php8_design_patterns\\Behavioral\\Visitor\\": "src/behavioral/visitor/",
-			"php8_design_patterns\\Behavioral\\Visitor\\Tests\\": "src/behavioral/visitor/tests/"			
-		}
+		 "php8_design_patterns\\Behavioral\\Visitor\\": "src/behavioral/visitor/",
+		 "php8_design_patterns\\Behavioral\\Visitor\\Tests\\": "src/behavioral/visitor/tests/"			
+	     }
 	},	
 	"require-dev": {
         "phpunit/phpunit": "^9"
-    },
+        },
 	"provide" : {
-    "ext-mongo": "*"
+        "ext-mongo": "*"
 	},
 	"config": {
-		"optimize-autoloader":true
+	   "optimize-autoloader":true
 	}    			
 }	

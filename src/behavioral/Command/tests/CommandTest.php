@@ -1,17 +1,10 @@
 <?php
-
 declare(strict_types=1);
 
-
 namespace php8_design_patterns\Behavioral\Command\Tests;
-
-
 use php8_design_patterns\Behavioral\Command\DateCommand;
-
 use php8_design_patterns\Behavioral\Command\CustomizedDateCommand;
-
 use php8_design_patterns\Behavioral\Command\Receiver;
-
 use php8_design_patterns\Behavioral\Command\Invoker;
 
 use PHPUnit\Framework\TestCase;

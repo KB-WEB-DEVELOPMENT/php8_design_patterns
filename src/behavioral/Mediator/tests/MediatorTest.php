@@ -58,7 +58,7 @@ class MediatorTest extends TestCase
    
 	}
 	
-    public function testCanGetStateChange():void
+        public function testCanGetStateChange():void
 	{	
 		$mediator = new FormatMediator('this is a very long text where the first letter of each word will change its letter case.');
 
@@ -70,8 +70,6 @@ class MediatorTest extends TestCase
 		
 		$exp = 'This Is A Very Long Text Where The First Letter Of Each Word Will Change Its Letter Case.';
 				
-		$this->assertSame($exp,$str);	
-   
-	}	
-		
+		$this->assertSame($exp,$str);	  
+	}			
 }

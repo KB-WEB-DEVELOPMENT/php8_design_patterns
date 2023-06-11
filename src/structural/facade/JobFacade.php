@@ -22,7 +22,7 @@ class JobFacade
 	}
 	
 	public function isPrePaidRequirementMet(string $passwordID,string $address,array $contactInfos,int $amount): bool
-    {
+        {
 		if ($this->accommodation->showValidIdentity(passwordID:$passwordID)) {
 			if ($this->accommodation->registerAccomodation(passwordID:$passwordID,adress:$address)) {
 				if ($this->accommodation->payDeposit(passwordID:$passwordID,amount:$amount)) {			 
@@ -30,15 +30,15 @@ class JobFacade
 						return true;
 					} else {
 						return false;
-					  }					
-			    } else {
+					}					
+			        } else {
 					return false;
-			     }   				
-		    } else {
+			        }   				
+		          } else {
 			 	 return false;
-			  }
-	  } else {
-		  return  false;
-	   }
-    }		
+			 }
+	          } else {
+		   return  false;
+	       }
+        }		
 }

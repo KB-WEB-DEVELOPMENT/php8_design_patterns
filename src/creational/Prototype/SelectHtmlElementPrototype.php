@@ -8,9 +8,9 @@ class SelectHtmlElementPrototype extends HtmlElementPrototype
 {
 		
 	public function __construct(
-        public string $elementId,
-        public string $elementName, 
-	public array $elementConfig,
+          public string $elementId,
+          public string $elementName, 
+	  public array $elementConfig,
 	) {}
 
 	public function __clone();

@@ -9,7 +9,7 @@ class OnlyFirstUpperColleague extends FormatColleague {
 	/* note that enum could be used since $state is only going to take 2 values, 
  	   namely 'all_first_upper' or  'only_first_upper'
 	   https://www.php.net/manual/en/language.types.enumerations.php */
-    protected string $state;
+        protected string $state;
 
 	public function __construct(		
 		protected string $text,
@@ -31,22 +31,22 @@ class OnlyFirstUpperColleague extends FormatColleague {
 		$this->state = $stateInput;
 	}
 
-    protected function getState():string  
+        protected function getState():string  
 	{
 		return $this->state;
 	}
 	
 	protected function setOnlyFirstUpperCase():void 
 	{
-      $this->setTxt(textInput:ucfirst($this->getTxt()));
-      $this->setState(stateInput:'only_first_upper');
-      $this->getMediator()->change(FormatColleague:$this);
-    }
+        	$this->setTxt(textInput:ucfirst($this->getTxt()));
+      		$this->setState(stateInput:'only_first_upper');
+      		$this->getMediator()->change(FormatColleague:$this);
+        }
 	
-    protected function setAllFirstUpperCase():void 
+        protected function setAllFirstUpperCase():void 
 	{
-      $this->setTxt(textInput:ucwords($this->getTxt()));
-      $this->setState(stateInput:'all_first_upper');
-      $this->getMediator()->change(FormatColleague:$this);
-    }
+        	$this->setTxt(textInput:ucwords($this->getTxt()));
+      		$this->setState(stateInput:'all_first_upper');
+      		$this->getMediator()->change(FormatColleague:$this);
+       }
 }

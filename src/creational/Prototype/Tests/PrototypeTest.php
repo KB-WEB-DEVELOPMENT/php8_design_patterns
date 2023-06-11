@@ -59,15 +59,14 @@ class PrototypeTest extends TestCase
 		$elementConfig2 = [
 			"autofocus" => true,
 			"disabled" => false,
-            "mutipled" => true,
+                        "mutipled" => true,
 			"required" => true,
 			"size" => 450,
-            "valueName-value"  
-				=> [ 
-					 "1000" => "Audi",
-					 "2000" => "BMW",
-					 "3000" => "Mercedes",
-				   ]	  
+                        "valueName-value"  => [ 
+			        "1000" => "Audi",
+				"2000" => "BMW",
+				"3000" => "Mercedes",
+		         ]	  
 		 ];
 				
 		$prototype2 = new SelectHtmlElementPrototype(elementId:"elemtId2",elementName:"GuestForm",elementConfig:$elementConfig2);

@@ -37,10 +37,10 @@ class VisitorTest extends TestCase
 		$expArray = [];
 		
 		$expArray = [
-		'Shape:Disk,Area=78.54 unit length squared,Perimeter=31.42 unit length',
-		'Shape:Rectangle,Area=12 unit length squared,Perimeter=7 unit length',
-		'Shape:Triangle,Area=5.33 unit length squared,Perimeter=13 unit length',
-	    'Shape:Square,Area=100 unit length squared,Perimeter=40 unit length',	
+		  'Shape:Disk,Area=78.54 unit length squared,Perimeter=31.42 unit length',
+		  'Shape:Rectangle,Area=12 unit length squared,Perimeter=7 unit length',
+		  'Shape:Triangle,Area=5.33 unit length squared,Perimeter=13 unit length',
+	          'Shape:Square,Area=100 unit length squared,Perimeter=40 unit length',	
 		];
 	
 		$this->assertSame($expArray,$resArray);

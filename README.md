@@ -1,5 +1,3 @@
-# php8_design_patterns
-
 Repository with application examples of the most common design patterns. 
 
 PHPUnit tests for each pattern are included.

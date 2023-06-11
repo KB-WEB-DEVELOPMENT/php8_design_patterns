@@ -24,7 +24,7 @@ class StrategyTest extends TestCase
         	return [
 			 'unsorted' =>	[7 => 'Croatia', 2 => 'Austria', 13 => 'Belgium', 1 => 'USA'],
 			 'sorted by key' => [1 => 'USA', 2 => 'Austria',  7 => 'Croatia', 13 => 'Belgium']
-	];
+	        ];
 	}	
 		
        /**

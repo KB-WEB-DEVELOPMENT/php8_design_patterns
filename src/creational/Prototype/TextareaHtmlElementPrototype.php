@@ -9,7 +9,7 @@ class TextareaHtmlElementPrototype extends HtmlElementPrototype
 	public function __construct(
         public string $elementId,
         public string $elementName, 
-		public array $elementConfig,
+	public array $elementConfig,
 	) {}
 
 	public function __clone();
@@ -40,9 +40,9 @@ class TextareaHtmlElementPrototype extends HtmlElementPrototype
 			   $rows = (is_int($this->elementConfig["rows"]) && $this->elementConfig["rows"] > 0) ? $this->elementConfig["rows"] : 50;			  
 			   $wrap = in_array($this->elementConfig["wrap"],array("soft","hard")) ? $this->elementConfig["wrap"] : null; 
 		  
-		      $htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" ';
-		      $htmlCode .= '&nbsp;'.$autofocus;
-              $htmlCode .= '&nbsp;'.$disabled;
+		          $htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" ';
+		          $htmlCode .= '&nbsp;'.$autofocus;
+                          $htmlCode .= '&nbsp;'.$disabled;
 			  $htmlCode .= '&nbsp;'.$readonly;
 			  $htmlCode .= '&nbsp;'.$required;			  
 			  $htmlCode .= '&nbsp;rows="' . $rows . '"';

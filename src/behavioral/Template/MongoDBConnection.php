@@ -12,46 +12,44 @@ class  MongoDBConnection extends DatabaseConnection {
 	){}
 	
      protected function connect(): string
-	 {
-			$connectionType = 'MongoDBConnection';
+     {
+       $connectionType = 'MongoDBConnection';
 		
-			if (!empty($this->uriOptions)) {
+        if (!empty($this->uriOptions)) {
 				
-				$configArr = [];
+		$configArr = [];
 				
-				$configArr['username'] = $this->uriOptions['username'] ?? "";
-				$configArr['password'] = $this->uriOptions['password'] ?? "";
-				$configArr['ssl'] = $this->uriOptions['ssl'] ?? true;
-				$configArr['replicaSet'] = $this->uriOptions['replicaSet'] ?? "";
-				$configArr['authSource'] = $this->uriOptions['authSource'] ?? "";
+		$configArr['username'] = $this->uriOptions['username'] ?? "";
+		$configArr['password'] = $this->uriOptions['password'] ?? "";
+		$configArr['ssl'] = $this->uriOptions['ssl'] ?? true;
+		$configArr['replicaSet'] = $this->uriOptions['replicaSet'] ?? "";
+		$configArr['authSource'] = $this->uriOptions['authSource'] ?? "";
 					
-				$mongoDBclient = new MongoDB\Client(
-					$uri,	
+		$mongoDBclient = new MongoDB\Client(
+				        $uri,	
 					[			    
-						'username' => $configArr['username'],
-						'password' => $configArr['password'],
-						'ssl' => $configArr['ssl'] ,
-						'replicaSet' => $configArr['replicaSet'],
-						'authSource' => $configArr['authSource'],				
+					  'username' => $configArr['username'],
+					  'password' => $configArr['password'],
+					  'ssl' => $configArr['ssl'] ,
+					  'replicaSet' => $configArr['replicaSet'],
+					  'authSource' => $configArr['authSource'],				
 					],
-				);
+		);
 			
-			} else {
-				
-				$mongoDBclient = new MongoDB\Client($this->uri);			  
-			}	
+	 } else {		
+		$mongoDBclient = new MongoDB\Client($this->uri);			  
+	 }	
 							
-			try {
-				
-				$dbListOrException = $mongoDBclient->listDatabases();
+	 try {			
+		$dbListOrException = $mongoDBclient->listDatabases();
 
-				$connectionStatus = true;
+		$connectionStatus = true;
 				
-			} catch (Exception) {
+	  } catch (Exception) {
 			
-				$connectionStatus = false;
-			}
+	      $connectionStatus = false;
+	    }
 					 
-		$this->printConnectionResult(connectionType:$connectionType,connectionStatus:$connectionStatus);	
-	 }	 
+	    $this->printConnectionResult(connectionType:$connectionType,connectionStatus:$connectionStatus);	
+    }	 
 }

@@ -11,65 +11,63 @@ class  FilesReader implements FilesReaderLib
 	private array $fileInfosArray = [];
 	
 	public function __construct(
-		private string $filename
+	   private string $filename
 	){}
 		
 	public function isLocalFile(): bool
-	{
-		  
-		 $this->fileLocation = false;
+	{	  
+	   $this->fileLocation = false;
 		 
-		 $docRootPath = $_SERVER['DOCUMENT_ROOT'];
+	   $docRootPath = $_SERVER['DOCUMENT_ROOT'];
 		 
-		 $directory = new \RecursiveDirectoryIterator($docRootPath);
-		 $iterator  = new \RecursiveIteratorIterator($directory);
+	   $directory = new \RecursiveDirectoryIterator($docRootPath);
+	   $iterator  = new \RecursiveIteratorIterator($directory);
 
-		foreach ($iterator as $info) {
+	   foreach ($iterator as $info) {
 
-			if ($info->getFilename() == $this->filename) {
+	     if ($info->getFilename() == $this->filename) {
 				
-				   $this->fileLocation = true;
+	        $this->fileLocation = true;
 			    
-				   break;
-			}
-		}
+		break;
+	      }
+	   }	
 		
-		return $this->fileLocation;
+	    return $this->fileLocation;
 	}
 	
 	public function isReadableFile(): bool
 	{					
-		return is_readable($this->filename);
+	  return is_readable($this->filename);
 	}	
 	
 	public function getFileInfos(): array
 	{
-		$this->fileInfosArray = pathinfo($this->filename);
-		$this->fileInfosArray["filesize"] = filesize($this->filename); 
+	  $this->fileInfosArray = pathinfo($this->filename);
+	  $this->fileInfosArray["filesize"] = filesize($this->filename); 
 
-		return $this->fileInfosArray;
+	  return $this->fileInfosArray;
 	}	
 	
 	public function copyRemoteFile(): bool
 	{
+	   $remote_file_contents = (file_get_contents($this->filename) !== false) ? file_get_contents($this->filename) : null; 	
 		
-		$remote_file_contents = (file_get_contents($this->filename) !== false) ? file_get_contents($this->filename) : null; 	
+	   $url = (parse_url($this->filename) !== false) ? parse_url($this->filename) : null;
 		
-		$url = (parse_url($this->filename) !== false) ? parse_url($this->filename) : null;
+	   $filename = !empty($url) ? pathinfo($url['path'], PATHINFO_FILENAME) : null;
 		
-		$filename = !empty($url) ? pathinfo($url['path'], PATHINFO_FILENAME) : null;
-		
-		$ext = !empty($url) ? pathinfo($url['path'], PATHINFO_EXTENSION) : null;
+	   $ext = !empty($url) ? pathinfo($url['path'], PATHINFO_EXTENSION) : null;
 				
-		$local_file_path = !empty($filename && $ext) ? basename(__DIR__) . $filename . $ext : null;
+	   $local_file_path = !empty($filename && $ext) ? basename(__DIR__) . $filename . $ext : null;
 		
-		if (!empty($remote_file_contents && $local_file_path)) {
+	   if (!empty($remote_file_contents && $local_file_path)) {
 			
-			file_put_contents($local_file_path, $remote_file_contents);
+	      file_put_contents($local_file_path, $remote_file_contents);
 			
-			return true;
+	      return true;
 		
-		} else {
+	     } else {
 			return false;
 		 }		
 	}		

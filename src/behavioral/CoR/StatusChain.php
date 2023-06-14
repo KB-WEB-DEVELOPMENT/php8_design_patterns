@@ -8,6 +8,6 @@ class StatusChain extends AbstractChain
 {
     public function check(User $user): bool
     {        
-		return $user->isActive() ? parent::check(user:$user) : false;		
+        return $user->isActive() ? parent::check(user:$user) : false;		
     }
 }

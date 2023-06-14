@@ -18,7 +18,7 @@ class CredentialChain extends AbstractChain
     {
         foreach ($this->chainedUsers as $u) {
             if (($user->getUsername() === $u['username']) && ($user->getPassword() === $u['password'])) {
-                return parent::check($user);
+                return parent::check(user:$user);
             }
         }
         return false;

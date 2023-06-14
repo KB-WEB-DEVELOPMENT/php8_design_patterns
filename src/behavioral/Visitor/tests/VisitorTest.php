@@ -8,6 +8,8 @@ use php8_design_patterns\Behavioral\Visitor\Rectangle;
 use php8_design_patterns\Behavioral\Visitor\Triangle;
 use php8_design_patterns\Behavioral\Visitor\Square;
 
+use php8_design_patterns\Behavioral\Visitor\ShapesPropertiesCalculator;
+
 use PHPUnit\Framework\TestCase;
 
 class VisitorTest extends TestCase
@@ -17,10 +19,10 @@ class VisitorTest extends TestCase
 	    
 		$shapesPropsCalculator = new ShapesPropertiesCalculator();
 		
-		$diskObj = new Disk(5);
-		$rectObj = new Rectangle(4,3);
-		$triangleObj = new Triangle(3,4,6);
-		$squareObj = new Square(10);
+		$diskObj = new Disk(radius:5);
+		$rectObj = new Rectangle(width:4,height:3);
+		$triangleObj = new Triangle(side1:3,side2:4,side3:6);
+		$squareObj = new Square(side:10);
 				
 		$geoShapesObjArr = [];
 		
@@ -30,17 +32,17 @@ class VisitorTest extends TestCase
 	
 		foreach($geoShapesObjArr as $shapeObj) {
 			
-			$resArray[] = $shapeObj.accept($shapesPropsCalculator);
+			$resArray[] = $shapeObj.accept(visitor:$shapesPropsCalculator);
 
 		}	
 		
 		$expArray = [];
 		
 		$expArray = [
-		  'Shape:Disk,Area=78.54 unit length squared,Perimeter=31.42 unit length',
-		  'Shape:Rectangle,Area=12 unit length squared,Perimeter=7 unit length',
-		  'Shape:Triangle,Area=5.33 unit length squared,Perimeter=13 unit length',
-	          'Shape:Square,Area=100 unit length squared,Perimeter=40 unit length',	
+			'Shape:Disk,Area=78.54 unit length squared,Perimeter=31.42 unit length',
+			'Shape:Rectangle,Area=12 unit length squared,Perimeter=7 unit length',
+			'Shape:Triangle,Area=5.33 unit length squared,Perimeter=13 unit length',
+			'Shape:Square,Area=100 unit length squared,Perimeter=40 unit length',	
 		];
 	
 		$this->assertSame($expArray,$resArray);

@@ -20,14 +20,14 @@ class FormatMediator {
 	
 	protected function getAllUpper(): object
 	{
-		$this->allUpperColleagueObj = new AllUpperColleague($this->text);
+		$this->allUpperColleagueObj = new AllUpperColleague(text:$this->text);
 		
 		return $this->allUpperColleagueObj;
 	}
     
 	protected function getOnlyFirstUpper(): object
 	{
-		$this->onlyFirstUpperColleagueObj = new OnlyFirstUpperColleague($this->text);
+		$this->onlyFirstUpperColleagueObj = new OnlyFirstUpperColleague(text:$this->text);
 	
 		return $this->onlyFirstUpperColleagueObj;
 	}

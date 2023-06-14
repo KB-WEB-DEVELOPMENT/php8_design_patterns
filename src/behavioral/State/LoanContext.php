@@ -9,10 +9,10 @@ class LoanContext
 	private State $state;
 	
 	private array $loanStatus = [ 'step1of4' => 'REQUESTED (R)',
-				      'step2of4' => 'VERIFIED (V)',
-				      'step3of4' => 'PAID (P)',
-				      'step4of4' => 'CLOSED (C)'
-				    ];  
+								  'step2of4' => 'VERIFIED (V)',
+								  'step3of4' => 'PAID (P)',
+								  'step4of4' => 'CLOSED (C)'
+								];  
 
 	public function __construct(
 		private string $borrowerCodeId
@@ -22,7 +22,7 @@ class LoanContext
 	 {
 		$loan = new self($this->borrowerCodeId);
 		
-		$loan->state = new StateRequested($this->borrowerCodeId,$this->loanStatus);
+		$loan->state = new StateRequested(borrowerCodeId:$this->borrowerCodeId,loanStatus:$this->loanStatus);
 
 		return $loan;
 	}

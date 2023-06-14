@@ -11,46 +11,42 @@ use PHPUnit\Framework\TestCase;
 
 class StrategyTest extends TestCase
 {
-	public function listSortingDataProvider(): array
+    public function listSortingDataProvider(): array
     {
         return [
-				'unsorted' => 
-						['Finland', 'Spain', 'Burundi', 'Canada', 'USA'],
-				'sorted'  =>		
-						['Burundi', 'Canada', 'Finland', 'Spain', 'USA']
-				];
+		 'unsorted' => ['Finland', 'Spain', 'Burundi', 'Canada', 'USA'],
+		 'sorted'  =>  ['Burundi', 'Canada', 'Finland', 'Spain', 'USA']
+	      ];
     }
 	
-	public function mapSortingDataProvider(): array
+    public function mapSortingDataProvider(): array
     {
         return [
-				'unsorted' =>	
-						[7 => 'Croatia', 2 => 'Austria', 13 => 'Belgium', 1 => 'USA'],
-				'sorted by key' =>	
-						[1 => 'USA', 2 => 'Austria',  7 => 'Croatia', 13 => 'Belgium']
-			   ]
-	}	
+		 'unsorted' =>	[7 => 'Croatia', 2 => 'Austria', 13 => 'Belgium', 1 => 'USA'],
+		 'sorted by key' => [1 => 'USA', 2 => 'Austria',  7 => 'Croatia', 13 => 'Belgium']
+	];
+    }	
 		
-	/**
-     * @dataProvider listSortingDataProvider
+    /**
+    * @dataProvider listSortingDataProvider
     */
     public function testCanSortByList(array $unsortedArray,array $expectedSortedArray):void
     {
         $list = new ListSortingMachine(sortDir:'asc');
 		
-		$contextObj = new Context(sortingMachine:$list);
+	$contextObj = new Context(sortingMachine:$list);
 		
-		$sortedArr = $contextObj->performSorting(unsortedArray:$unsortedArray);
+	$sortedArr = $contextObj->performSorting(unsortedArray:$unsortedArray);
 		
-		$this->assertSame($expectedSortedArray,$sortedArr);
+	$this->assertSame($expectedSortedArray,$sortedArr);
     }
 	
-	/**
-     * @dataProvider mapSortingDataProvider
+    /**
+    * @dataProvider mapSortingDataProvider
     */
     public function testCanSortByMap(array $unsortedArray,array $expectedSortedArray):void
     {
-      $map = new MapSortingMachine(sortBy:'key',sortDir:'asc');
+          $map = new MapSortingMachine(sortBy:'key',sortDir:'asc');
 	  
 	  $contextObj = new Context(sortingMachine:$map);
 
@@ -61,29 +57,29 @@ class StrategyTest extends TestCase
 	
     public function testIsListSortingMachineConfigWrong():void
     {
-		$unsorted = ['Finland','Spain','Burundi','Canada','USA'];
+	$unsorted = ['Finland','Spain','Burundi','Canada','USA'];
 		
-		$list = new ListSortingMachine(sortDir:'left');
+	$list = new ListSortingMachine(sortDir:'left');
 
-		$contextObj = new Context(sortingMachine:$list);
+	$contextObj = new Context(sortingMachine:$list);
 		
-		$res = $contextObj->performSorting(unsortedArray:$unsorted);
+	$res = $contextObj->performSorting(unsortedArray:$unsorted);
 		
-		$this->assertSame(false,$res);
+	$this->assertSame(false,$res);
 		
     }	
 	
     public function testIsMapSortingMachineConfigWrong():void
     {
-		$unsorted = [7 => 'Croatia', 2 => 'Austria', 13 => 'Belgium', 1 => 'USA'];
+	$unsorted = [7 => 'Croatia', 2 => 'Austria', 13 => 'Belgium', 1 => 'USA'];
 		
-		$map = new MapSortingMachine(sortBy:'key',sortDir:'right');
+	$map = new MapSortingMachine(sortBy:'key',sortDir:'right');
 
-		$contextObj = new Context(sortingMachine:$map);
+	$contextObj = new Context(sortingMachine:$map);
 		
-		$res = $contextObj->performSorting(unsortedArray:$unsorted);
+	$res = $contextObj->performSorting(unsortedArray:$unsorted);
 		
-		$this->assertSame(false,$res);
+	$this->assertSame(false,$res);
     }
 	
 }

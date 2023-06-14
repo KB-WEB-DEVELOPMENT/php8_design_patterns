@@ -16,34 +16,39 @@ class AdapterTest extends TestCase
 	public function testCanGetWindowsCommandInfos:void
 	{
 
-           $str = 'ren | Example: ren file1.txt file2.txt';
-	   $w = new WindowsCommandsAnalyzer();
-	   $infos = $w->getWindowsCommand(command: "Rename");
+        $str = 'ren | Example: ren file1.txt file2.txt';
+		
+		$w = new WindowsCommandsAnalyzer();
+		
+		$infos = $w->getWindowsCommand(command:"Rename");
 
-	   $this->assertSame($infos,$str);
+		$this->assertSame($infos,$str);
 	}
 
 	public function testCanGetLinuxCommandInfos:void
 	{
-           $str = 'mv | Example: mv fileold.txt filenew.txt';
-	   $w = new LinuxCommandsAnalyzer();
-	   $infos = $w->getLinuxCommand(command: "Rename");
+        $str = 'mv | Example: mv fileold.txt filenew.txt';
+		
+		$w = new LinuxCommandsAnalyzer();
+		
+		$infos = $w->getLinuxCommand(command:"Rename");
 
-	   $this->assertSame($infos,$str);
+		$this->assertSame($infos,$str);
 	}
 	
 	public function testCanConvertCommandInfos:void
 	{
-	   $app = new App(new WindowsCommandsAnalyzer);
+		$app = new App(windowsCommandsAnalyzerObj:new WindowsCommandsAnalyzer());
 		
-	   $str1 = $app->getCommand(command: "Find");
+		$str1 = $app->getCommand(command:"Find");
 		
-	   $app->setConverter(WindowsToLinuxAdapter: new WindowsToLinuxAdapter);
+		$app->setConverter(adapter:new WindowsToLinuxAdapter());
 		
-	   $str2 = $app->convertCommand(command: "Find");
+		$str2 = $app->convertCommand(command:"Find");
 		
-	   $this->assertSame($str1,'find | Example: find "test" 123.txt');
-	   $this->assertSame($str2,'grep | Example: grep test file1.txt');		
+		$this->assertSame($str1,'find | Example: find "test" 123.txt');
+		
+		$this->assertSame($str2,'grep | Example: grep test file1.txt');		
 	}
 
 }

@@ -13,7 +13,7 @@ class StatePaid implements State
 		
 	public function doNext(LoanContext $context):void
 	{
-		$context->setState(new StateClosed($this->borrowerCodeId,$this->loanStatus));
+		$context->setState(state:new StateClosed(borrowerCodeId:$this->borrowerCodeId,loanStatus:$this->loanStatus));
 	}
 
 	public function printLoanStatus(): string

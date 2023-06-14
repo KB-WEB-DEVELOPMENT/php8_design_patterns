@@ -16,7 +16,7 @@ class MediatorTest extends TestCase
 		
 	public function testCanGetStandardText():void
 	{	
-		$mediator = new FormatMediator('this is a very long text where the first letter of each word will change its letter case.');
+		$mediator = new FormatMediator(text:'this is a very long text where the first letter of each word will change its letter case.');
 
 		$str = $mediator->getTxt();
 		
@@ -28,7 +28,7 @@ class MediatorTest extends TestCase
 	
 	public function testCanGetAllUpperText():void
 	{	
-		$mediator = new FormatMediator('this is a very long text where the first letter of each word will change its letter case.');
+		$mediator = new FormatMediator(text:'this is a very long text where the first letter of each word will change its letter case.');
 
 		$allUpperColleagueObj = $mediator->getAllUpper();
 		
@@ -44,7 +44,7 @@ class MediatorTest extends TestCase
 
 	public function testCanGetFirstUpperText():void
 	{	
-		$mediator = new FormatMediator('this is a very long text where the first letter of each word will change its letter case.');
+		$mediator = new FormatMediator(text:'this is a very long text where the first letter of each word will change its letter case.');
 
 		$onlyFirstUpperColleagueObj = $mediator->getOnlyFirstUpper();
 		
@@ -58,9 +58,9 @@ class MediatorTest extends TestCase
    
 	}
 	
-        public function testCanGetStateChange():void
+    public function testCanGetStateChange():void
 	{	
-		$mediator = new FormatMediator('this is a very long text where the first letter of each word will change its letter case.');
+		$mediator = new FormatMediator(text:'this is a very long text where the first letter of each word will change its letter case.');
 
 		$onlyFirstUpperColleagueObj = $mediator->getOnlyFirstUpper();
 		
@@ -70,6 +70,9 @@ class MediatorTest extends TestCase
 		
 		$exp = 'This Is A Very Long Text Where The First Letter Of Each Word Will Change Its Letter Case.';
 				
-		$this->assertSame($exp,$str);	  
-	}			
+		$this->assertSame($exp,$str);	
+   
+	}	
+		
 }
+

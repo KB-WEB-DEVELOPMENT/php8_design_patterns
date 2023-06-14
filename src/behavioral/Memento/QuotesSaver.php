@@ -10,7 +10,7 @@ class QuotesSaver
 
 	public function __construct(string $quote)
 	{		
-		$this->currentQuotesTimerState = new QuotesTimerState($quote);
+		$this->currentQuotesTimerState = new QuotesTimerState(quote:$quote);
 	}
 
 	public function saveToMemento(): QuotesTimerMemento

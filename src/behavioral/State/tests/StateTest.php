@@ -13,7 +13,7 @@ class StateTest extends TestCase
 
 	public function testDefaultStateCreated():void
 	{
-		$loanContext = LoanContext('XA19656')::create();
+		$loanContext = LoanContext(borrowerCodeId:'XA19656')::create();
 		
 		$exp = 'BORROWER CODE ID: #XA19656 LOAN STATUS: REQUESTED (R)'; 
 		
@@ -22,7 +22,7 @@ class StateTest extends TestCase
 
 	public function testStateVerifiedAfterStateCreated():void
 	{
-		$loanContext = LoanContext('ZK53298')::create();
+		$loanContext = LoanContext(borrowerCodeId:'ZK53298')::create();
 		
 		$loanContext->doNext();
 		
@@ -33,7 +33,7 @@ class StateTest extends TestCase
 	
 	public function testStatePaidAfterStateVerified():void
 	{
-		$loanContext = LoanContext('SXL845')::create();
+		$loanContext = LoanContext(borrowerCodeId:'SXL845')::create();
 		
 		$loanContext->doNext();
 		$loanContext->doNext();
@@ -45,7 +45,7 @@ class StateTest extends TestCase
 
 	public function testStateClosedAfterStatePaid():void
 	{
-		$loanContext = LoanContext('QSL641')::create();
+		$loanContext = LoanContext(borrowerCodeId:'QSL641')::create();
 		
 		$loanContext->doNext();
 		$loanContext->doNext();
@@ -58,7 +58,7 @@ class StateTest extends TestCase
 
 	public function testStateClosedIsLastState():void
 	{
-		$loanContext = LoanContext('LGM9571')::create();
+		$loanContext = LoanContext(borrowerCodeId:'LGM9571')::create();
 		$loanContext->doNext();
 		$loanContext->doNext();
 		$loanContext->doNext();

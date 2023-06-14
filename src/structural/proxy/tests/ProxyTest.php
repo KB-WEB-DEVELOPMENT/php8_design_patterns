@@ -95,7 +95,7 @@ class ProxyTest extends TestCase
 			'filesize' => 567
 		];	
 	
-	    $this->assertSame($exp,$fileInfosArray);
+	        $this->assertSame($exp,$fileInfosArray);
 	
 	}	
 	

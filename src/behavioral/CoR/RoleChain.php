@@ -15,7 +15,7 @@ class RoleChain extends AbstractChain
     {
         foreach ($this->validRoles as $validRole) {
             if ($user->getRole() === $validRole) {
-                return parent::check($user);
+                return parent::check(user:$user);
             }
         }
  

@@ -19,15 +19,15 @@ class CompositeTest extends TestCase
 		
 		$configLabelElement = ["for" => "formId5", "form" => "contactForm", "content" => "Contact infos:"];
 		
-		$form->addElement(new LabelInputElement(elementConfig: $configLabelElement));
+		$form->addElement(element:new LabelInputElement(elementConfig: $configLabelElement));
 				
 		$configTextElement = ["id" => "css-x-9", "name" => "username", "value" => "Name"];
 		
-		$form->addElement(new TextInputElement(elementConfig: $configTextElement));
+		$form->addElement(element:new TextInputElement(elementConfig: $configTextElement));
 		
 		$configDateElement = ["id" => "css-x-12", "name" => "DOB" ];
 
-		$form->addElement(new DateInputElement(elementConfig: $configDateElement));
+		$form->addElement(element:new DateInputElement(elementConfig: $configDateElement));
 
 		$exp_form  = '<form><label for="formId5" form="contactForm">';
 		$exp_form .= 'Contact infos:</label>';

@@ -8,6 +8,6 @@ class PDOService extends DBService
 {
 	public function connect(array $config): bool
 	{		
-		return $this->dbConfigurer->get($config);	
+		return $this->dbConfigurer->get(config:$config);	
 	}			
 }

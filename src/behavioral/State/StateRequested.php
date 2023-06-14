@@ -13,7 +13,7 @@ class StateRequested implements State
 	
 	public function doNext(LoanContext $context):void
 	{
-		$context->setState(new StateVerified($this->borrowerCodeId,$this->loanStatus));
+		$context->setState(state:new StateVerified(borrowerCodeId:$this->borrowerCodeId,loanStatus:$this->loanStatus));
 	}
 
 	public function printLoanStatus():string

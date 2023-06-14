@@ -17,6 +17,6 @@ abstract class AbstractChain
  
     public function check(User $user): bool
     {
-        return $this->next ? $this->next->check($user) : true;
+        return $this->next ? $this->next->check(user:$user) : true;
     }
 }

@@ -14,7 +14,7 @@ class MementoTest extends TestCase
 {
 	public function testCanSaveAndRestoreQuote():void
 	{
-		$qsObj = new QuotesSaver('Better be prepared than sorry.');
+		$qsObj = new QuotesSaver(quote:'Better be prepared than sorry.');
 
 		$mementoObj = $qsObj->saveToMemento();
 		
@@ -32,7 +32,7 @@ class MementoTest extends TestCase
 	public function testSaveAndRestoreIsInstantaneous():void
 	{
 
-		$qsObj = new QuotesSaver('Better be prepared than sorry.');
+		$qsObj = new QuotesSaver(quote:'Better be prepared than sorry.');
 
 		$start_time_func = microtime(true);
 		

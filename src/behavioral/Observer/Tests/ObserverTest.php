@@ -17,9 +17,9 @@ class ObserverTest extends TestCase
 		
 		$copy_subject = $subject;
 		
-		$observer = new Observer(1);
+		$observer = new Observer(id:1);
 		
-		$subject->attach($observer);
+		$subject->attach(observer:$observer);
 		
 		$error = 'We expect this test to fail as the class member $observers of both $copy_subject and $subject does not have the same value.';
 		
@@ -32,12 +32,12 @@ class ObserverTest extends TestCase
 		$subject1 = new Subject();
 		$subject2 = new Subject();
 
-		$observer = new Observer(1);
+		$observer = new Observer(id:1);
 		
-		$subject1->attach($observer);
-		$subject2->attach($observer);
+		$subject1->attach(observer:$observer);
+		$subject2->attach(observer:$observer);
 		
-		$subject1->detach($observer);
+		$subject1->detach(observer:$observer);
 		
 		$error = 'We expect this test to fail as the class member $observers of both $subject1 and $subject2 does not have the same value.';
 		
@@ -64,9 +64,9 @@ class ObserverTest extends TestCase
 	
 		$subject = new Subject();
 		
-		$observer = new Observer(1);
+		$observer = new Observer(id:1);
 		
-		$subject->attach($observer);
+		$subject->attach(id:$observer);
 		
 		$str = $subject->setState(state:'state trying to notify all observers');
 		

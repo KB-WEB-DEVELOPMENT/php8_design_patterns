@@ -4,9 +4,7 @@ declare(strict_types=1);
 namespace php8_design_patterns\Behavioral\Mediator\Tests;
 
 use php8_design_patterns\Behavioral\Mediator\AllUpperColleague;
-
 use php8_design_patterns\Behavioral\Mediator\OnlyFirstUpperColleague;
-
 use php8_design_patterns\Behavioral\Mediator\FormatMediator;
 
 use PHPUnit\Framework\TestCase;
@@ -59,7 +57,7 @@ class MediatorTest extends TestCase
 	}
 	
     public function testCanGetStateChange():void
-	{	
+    {	
 		$mediator = new FormatMediator(text:'this is a very long text where the first letter of each word will change its letter case.');
 
 		$onlyFirstUpperColleagueObj = $mediator->getOnlyFirstUpper();
@@ -70,9 +68,6 @@ class MediatorTest extends TestCase
 		
 		$exp = 'This Is A Very Long Text Where The First Letter Of Each Word Will Change Its Letter Case.';
 				
-		$this->assertSame($exp,$str);	
-   
-	}	
-		
+		$this->assertSame($exp,$str);	  
+    }			
 }
-

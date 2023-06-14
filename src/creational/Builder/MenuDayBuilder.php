@@ -21,26 +21,26 @@ class MenuDayBuilder implements Builder
 	
 	public function addDrink(): void
 	{
-		$this->menuDay->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Drink Name', new Drink());
+		$this->menuDay->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Drink Name',sustenanceObj:new Drink());
 	}
 	
 	public function addStarter(): void
 	{
-		$this->menuDay->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Starter Name', new Starter());
+		$this->menuDay->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Starter Name',sustenanceObj:new Starter());
 	}
 	
 	public function addMainCourse(): void
 	{
-		$this->menuDay->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Main Course Name', new MainCourse());
+		$this->menuDay->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Main Course Name',sustenanceObj:new MainCourse());
 	}
 	
 	public function addDessert(): void
 	{
-		$this->menuDay->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Dessert Name', new Dessert());
+		$this->menuDay->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu of the Day Standard Dessert Name',sustenanceObj:new Dessert());
 	}
 	
 	public function getSustenance(): Sustenance
-        {
+    {
 		return $this->menuDay;
 	}
  }

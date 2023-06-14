@@ -21,26 +21,26 @@ class MenuBuilder implements Builder
 	
 	public function addDrink(): void
 	{
-		$this->menu->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Drink Name', new Drink());
+		$this->menu->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Drink Name',sustenanceObj:new Drink());
 	}
 	
 	public function addStarter(): void
 	{
-		$this->menu->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Starter Name', new Starter());
+		$this->menu->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Starter Name',sustenanceObj:new Starter());
 	}
 	
 	public function addMainCourse(): void
 	{
-		$this->menu->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Main Course Name', new MainCourse());
+		$this->menu->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Main Course Name',sustenanceObj:new MainCourse());
 	}
 	
 	public function addDessert(): void
 	{
-		$this->menu->setComponent('From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Dessert Name', new Dessert());
+		$this->menu->setComponent(sustenanceName:'From dd/mm/yyyy to dd/mm/yyyy | Menu Standard Dessert Name',sustenanceObj:new Dessert());
 	}
 	
 	public function getSustenance(): Sustenance
-        {
+    {
 		return $this->menu;
 	}
  }

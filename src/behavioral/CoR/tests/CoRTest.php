@@ -25,15 +25,15 @@ class CoRTest extends TestCase
 		
 		$chain->linkNext($sc)->linkNext($rc);
 
-		$auth = new Authenticate($chain);
+		$auth = new Authenticate(chain:$chain);
 		
-		$user = new User('user1','1234','STUDENT',true);
+		$user = new User(username:'user1',password:'1234',role:'STUDENT',isActive:true);
 		
-		$res = $auth->login($user);
+		$res = $auth->login(user:$user);
 		
 		$this->assertTrue($res);
 		
-       }
+    }
 
 	public function testWrongUsername():void
 	{	
@@ -45,14 +45,14 @@ class CoRTest extends TestCase
 		
 		$chain->linkNext($sc)->linkNext($rc);
 
-		$auth = new Authenticate($chain);
+		$auth = new Authenticate(chain:$chain);
 		
-		$user = new User('user567','1234','STUDENT',true);
+		$user = new User(username:'user567',password:'1234',role:'STUDENT',isActive:true);
 		
 		$res = $auth->login($user);
 		
 		$this->assertFalse($res);
-        }
+    }
 
 	public function testWrongPassword():void
 	{	
@@ -64,14 +64,14 @@ class CoRTest extends TestCase
 		
 		$chain->linkNext($sc)->linkNext($rc);
 
-		$auth = new Authenticate($chain);
+		$auth = new Authenticate(chain:$chain);
 		
-		$user = new User('user1','9999','STUDENT',true);
+		$user = new User(username:'user1',password:'9999',role:'STUDENT',isActive:true);
 		
-		$res = $auth->login($user);
+		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-        }
+    }
 
 	public function testWrongRole():void
 	{	
@@ -83,14 +83,14 @@ class CoRTest extends TestCase
 		
 		$chain->linkNext($sc)->linkNext($rc);
 
-		$auth = new Authenticate($chain);
+		$auth = new Authenticate(chain:$chain);
 		
-		$user = new User('user1','1234','TOURIST',true);
+		$user = new User(username:'user1',password:'1234',role:'TOURIST',isActive:true);
 		
-		$res = $auth->login($user);
+		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-        }
+    }
 
 	public function testWrongStatus():void
 	{	
@@ -102,12 +102,12 @@ class CoRTest extends TestCase
 		
 		$chain->linkNext($sc)->linkNext($rc);
 
-		$auth = new Authenticate($chain);
+		$auth = new Authenticate(chain:$chain);
 		
-		$user = new User('user1','1234','STUDENT',false);
+		$user = new User(username:'user1',password:'1234',role:'STUDENT',isActive:false);
 		
-		$res = $auth->login($user);
+		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-       }	
+    }	
 }	

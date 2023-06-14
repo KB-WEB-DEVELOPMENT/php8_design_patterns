@@ -16,7 +16,7 @@ class AdapterTest extends TestCase
 	public function testCanGetWindowsCommandInfos:void
 	{
 
-        $str = 'ren | Example: ren file1.txt file2.txt';
+                $str = 'ren | Example: ren file1.txt file2.txt';
 		
 		$w = new WindowsCommandsAnalyzer();
 		
@@ -27,7 +27,7 @@ class AdapterTest extends TestCase
 
 	public function testCanGetLinuxCommandInfos:void
 	{
-        $str = 'mv | Example: mv fileold.txt filenew.txt';
+                $str = 'mv | Example: mv fileold.txt filenew.txt';
 		
 		$w = new LinuxCommandsAnalyzer();
 		

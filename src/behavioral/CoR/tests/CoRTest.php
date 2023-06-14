@@ -31,9 +31,8 @@ class CoRTest extends TestCase
 		
 		$res = $auth->login(user:$user);
 		
-		$this->assertTrue($res);
-		
-    }
+		$this->assertTrue($res);		
+        }
 
 	public function testWrongUsername():void
 	{	
@@ -52,7 +51,7 @@ class CoRTest extends TestCase
 		$res = $auth->login($user);
 		
 		$this->assertFalse($res);
-    }
+        }
 
 	public function testWrongPassword():void
 	{	
@@ -71,7 +70,7 @@ class CoRTest extends TestCase
 		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-    }
+        }
 
 	public function testWrongRole():void
 	{	
@@ -90,7 +89,7 @@ class CoRTest extends TestCase
 		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-    }
+        }
 
 	public function testWrongStatus():void
 	{	
@@ -109,5 +108,5 @@ class CoRTest extends TestCase
 		$res = $auth->login(user:$user);
 		
 		$this->assertFalse($res);
-    }	
+        }	
 }	

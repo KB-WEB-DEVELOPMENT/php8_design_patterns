@@ -43,7 +43,7 @@ class DecoratorTest extends TestCase
 		$sc = new StringBytesCalculator();
 		$sc = new StringEncryptor(bytesCalculator:$sc);
 	
-        /* note: gzcompress("Kâmi") used as workaround here since we did not create any specific methods to 
+                /* note: gzcompress("Kâmi") used as workaround here since we did not create any specific methods to 
 		get compressed strings and get encrypted strings */ 	
 		$this->assertSame(20,$sc->getBytesSize(str:gzcompress("Kâmi")));
 	}		

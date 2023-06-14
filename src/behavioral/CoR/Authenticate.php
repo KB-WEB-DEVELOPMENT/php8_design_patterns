@@ -12,6 +12,6 @@ class Authenticate
  
     public function login(User $user): bool
     {
-        return $this->chain->check($user);
+        return $this->chain->check(user:$user);
     }
 }

@@ -66,7 +66,7 @@ class ObserverTest extends TestCase
 		
 		$observer = new Observer(id:1);
 		
-		$subject->attach(id:$observer);
+		$subject->attach(observer:$observer);
 		
 		$str = $subject->setState(state:'state trying to notify all observers');
 		

@@ -16,22 +16,22 @@ class Subject implements SubjectInterface {
   public function detach(ObserverInterface $observer): ?null
   {
 		
-    $res = is_bool(array_search($observer, $this->observers,true)) == true ?  null : unset($this->observers[$key]);
+        $res = is_bool(array_search($observer, $this->observers,true)) == true ?  null : unset($this->observers[$key]);
 				  
 	return $res;
   }
 
   public function notify():void
   {
-    foreach ($this->observers as $observer) {
-      $observer->update($this);
-    }
+      foreach ($this->observers as $observer) {
+        $observer->update($this);
+      }
   }
 
   public function setState(string $state):void
   {
 	$this->state = $state;
-    $this->notify();
+        $this->notify();
   }
 
   public function getState():string

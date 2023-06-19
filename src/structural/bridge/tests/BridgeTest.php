@@ -27,7 +27,7 @@ class BridgeTest extends TestCase
 		   "PASSWORD" => "psswd",		   
 		];
 		
-		$service = new PDOService(new PDOConfigurer());
+		$service = new PDOService(DBConfigurer:new PDOConfigurer());
 	
 		// assuming the connection works and the credentials are correct
 		$this->assertSame(true,$service->connect(config:$config));
@@ -43,7 +43,7 @@ class BridgeTest extends TestCase
 		   "PASSWORD" => "psswd",			
 		];
 		
-		$service = new MySQLiService(new MySQLiConfigurer());
+		$service = new MySQLiService(DBConfigurer:new MySQLiConfigurer());
 		
 		// assuming the connection works and the credentials are correct
 		$this->assertSame(true,$service->connect(config:$config));

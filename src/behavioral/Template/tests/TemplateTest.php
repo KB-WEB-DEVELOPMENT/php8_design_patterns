@@ -12,7 +12,7 @@ class TemplateTest extends TestCase
 {
     public function testCanConnectPostgresSQL():void
     {
-		$pgConnObj = new PostgresSQLConnection('localhost',3306,'testDB','admin','admin-password',0);
+		$pgConnObj = new PostgresSQLConnection(host:'localhost',port:3306,dbname:'testDB',user:'admin',password:'admin-password',flags:0);
 		
 		$str = $pgConnObj->connect();
 		
@@ -32,7 +32,7 @@ class TemplateTest extends TestCase
 		$uriOptions['replicaSet'] = 'myReplicaSet';
 		$uriOptions['authSource'] = 'admin';
 				
-		$mongoDBConnObj = new MongoDBConnection('mongodb://mongodb-deployment:27017',$uriOptions);
+		$mongoDBConnObj = new MongoDBConnection(uri:'mongodb://mongodb-deployment:27017',uriOptions:$uriOptions);
 		
 		$str = $mongoDBConnObj->connect();
 		

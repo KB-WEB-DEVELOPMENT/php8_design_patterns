@@ -9,20 +9,20 @@ class WindowsShellCommandCreator implements ShellCommandCreator
 	{
 		$command = "copy {$filename} {$filepath}";
 
-        return $command;
+                return $command;
 	}
 	
 	public function renameFile(string $old_filename, string $new_filename):string
 	{
 		$command = "rn {$old_filename} {$new_$filename}";
 
-        return $command;
+                return $command;
 	}
 
 	public function compareFiles(string $filename1, string $filename2):string
 	{
 		$command = "fc {$filename1} {$filename2}";
 
-        return $command;			
+                return $command;			
 	}
 }

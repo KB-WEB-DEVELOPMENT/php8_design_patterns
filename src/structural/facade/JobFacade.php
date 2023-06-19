@@ -7,7 +7,7 @@ namespace php8_design_patterns\Structural\Facade;
 class JobFacade
 {
 	public function __construct(
-		private Bank $bank
+		private Bank $bank,
 		private Accommodation $accommodation
 	){}
 

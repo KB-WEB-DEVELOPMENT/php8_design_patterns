@@ -8,5 +8,5 @@ interface State
 {
 	 public function doNext(LoanContext $context):void;
 
-	 public function printLoanStatus():string
+	 public function printLoanStatus():string;
 }

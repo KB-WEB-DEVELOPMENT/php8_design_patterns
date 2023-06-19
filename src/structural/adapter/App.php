@@ -6,11 +6,9 @@ namespace php8_design_patterns\Structural\Adapter;
 class App 
 {
     
-  public function __construct() 
-  {
-	  
-	private object $windowsCommandsAnalyzerObj;
-  }
+  public function __construct(
+      private object $windowsCommandsAnalyzerObj,
+  ){}
 	
   public function getCommand(string $command):string 
   {  

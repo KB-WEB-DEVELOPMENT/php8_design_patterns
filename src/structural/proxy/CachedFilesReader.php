@@ -11,7 +11,7 @@ class CachedFilesReader implements FilesReaderLib
     private array $fileInfosArray = [];
 	
     public function __construct(
-      private string $filename
+      private string $filename,
       protected FilesReader $filesReader
     ){}
 			

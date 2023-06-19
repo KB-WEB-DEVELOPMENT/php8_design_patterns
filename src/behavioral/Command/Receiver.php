@@ -9,7 +9,7 @@ class Receiver
 	private bool $enableDateConfig = true;
 	
 	public function __construct(
-		private string $firstname
+		private string $firstname,
 		private array  $dateConfig
 	) {}
 	

@@ -16,7 +16,7 @@ class  PostgresSQLConnection extends DatabaseConnection {
 	){}
 	
      protected function connect(): string
-	 {
+     {
 		$connectionType = 'PostgresSQLConnection';
 		
 		$conn_str = 'host=' . $this->host . ' port=' . $this->port . ' dbname=' . $this->dbname . ' user=' . $this->user;
@@ -25,5 +25,5 @@ class  PostgresSQLConnection extends DatabaseConnection {
 		$connectionStatus = (pg_connect($conn_str,$this->flags) == false) ? false : true;			 
 			 
 		$this->printConnectionResult(connectionType:$connectionType,connectionStatus:$connectionStatus);	
-	 }	 
+     }	 
 }

@@ -11,7 +11,7 @@ class PDOConfigurer implements DBConfigurer
 	       $options = [
 			PDO::ATTR_EMULATE_PREPARES => $config["ATT_EMULATE_PREPARES"],
 			PDO::ATTR_ERRMODE => $config["ATTR_ERRMODE"],
-			PDO::ATTR_DEFAULT_FETCH_MODE => $config["ATTR_DEFAULT_FETCH_MODE"],
+			PDO::ATTR_DEFAULT_FETCH_MODE => $config["ATTR_DEFAULT_FETCH_MODE"]
 		];
 
 		$dsn = 'mysql:host=' . $config["SERVER"] . ';dbname=' . $config["DB"] .  ';charset=' . $config["CHARSET"]; 

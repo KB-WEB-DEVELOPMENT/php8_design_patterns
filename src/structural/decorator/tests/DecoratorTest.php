@@ -22,7 +22,7 @@ class DecoratorTest extends TestCase
 	public function testCanGetSizeCompressedString():void
 	{
 		$sc = new StringBytesCalculator();
-		$sc = new StringCompressor(bytesCalculator:$sc)
+		$sc = new StringCompressor(bytesCalculator:$sc);
 		
 		// note: that we are better off not compressing such short strings
 		$this->assertSame(13,$sc->getBytesSize(str:"Kâmi"));

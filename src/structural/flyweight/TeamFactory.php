@@ -25,8 +25,8 @@ class TeamFactory
 				
        $playerName = (string)$newestPlayer->playerName;
        $playerPosition = (string)$newestPlayer->playerPosition;
-       $team = $newestPlayer->team;
+       $team = (string)$newestPlayer->team;
         
-       $newestPlayer->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,Team: (string)$team);				
+       $newestPlayer->printWelcomeMessage(playerName:$playerName,playerPosition:$playerPosition,playerTeam:$team);				
      }
  }

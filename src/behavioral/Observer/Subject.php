@@ -16,7 +16,7 @@ class Subject implements SubjectInterface {
   public function detach(ObserverInterface $observer): ?null
   {
 		
-        $res = is_bool(array_search($observer, $this->observers,true)) == true ?  null : unset($this->observers[$key]);
+        $res = is_bool(array_search($observer, $this->observers,true)) == true ?  null : unset($this->observers[$observer]);
 				  
 	return $res;
   }

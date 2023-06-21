@@ -37,13 +37,13 @@ class CommandTest extends TestCase
 			"dateType" => "FULL",
 			"timeType" => "FULL",
 			"calendar" => "TRADITIONAL"
-		]	
+		];	
 		
 		$receiver = new Receiver(firstname:'Kâmi',dateConfig:$dateConfig);
 		
 		$cdc = new CustomizedDateCommand(Receiver:$receiver);
 
-        $invoker->setCommand(Command:$cdc);
+                $invoker->setCommand(Command:$cdc);
 		$invoker->run();
 
 		$exp_str = 'Hi Kâmi, it is ' . date('l, d F Y') . ' at ' . date('h:i:s a') . date_default_timezone_get() . '.';
@@ -60,7 +60,7 @@ class CommandTest extends TestCase
 			"dateType" => "FULL",
 			"timeType" => "FULL",
 			"calendar" => "TRADITIONAL"
-		]	
+		];	
 		
 		$receiver = new Receiver(firstname:'Kâmi',dateConfig:$dateConfig);
 		

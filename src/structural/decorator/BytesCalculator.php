@@ -6,6 +6,6 @@ namespace php8_design_patterns\Structural\Decorator;
 
 interface BytesCalculator
 {
-	public function getBytesSize(string $str): int
+	public function getBytesSize(string $str): int;
 }
 

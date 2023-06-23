@@ -6,7 +6,7 @@ interface SubjectInterface {
 	
   public function attach(ObserverInterface $observer):void;
   
-  public function detach(ObserverInterface $observer):?null;
+  public function detach(ObserverInterface $observer):bool;
   
   public function notify():void;
 

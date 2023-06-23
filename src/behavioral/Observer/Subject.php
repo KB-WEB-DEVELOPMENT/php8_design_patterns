@@ -13,12 +13,14 @@ class Subject implements SubjectInterface {
 	$this->observers[] = $observer;
   }
 
-  public function detach(ObserverInterface $observer): ?null
+  public function detach(ObserverInterface $observer): bool
   {
-		
-        $res = is_bool(array_search($observer, $this->observers,true)) == true ?  null : unset($this->observers[$observer]);
-				  
-	return $res;
+        if (($arrayKey = array_search($observer, $this->observers)) !== false) {
+	    unset($this->observers[$arrayKey]);
+	    return true;
+	} else {
+	    return false;
+	}
   }
 
   public function notify():void

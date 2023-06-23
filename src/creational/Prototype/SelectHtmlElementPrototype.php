@@ -46,7 +46,7 @@ class SelectHtmlElementPrototype extends HtmlElementPrototype
 			  			  
 			  foreach($this->elementConfig["valueName-value"] as $k => $v)  {
 
-				$htmlCode .= '<option value="' . $k . '">' . $v . '</option';
+				$htmlCode .= '<option value="' . $k . '">' . $v . '</option>';
 
 			  }		
 			  

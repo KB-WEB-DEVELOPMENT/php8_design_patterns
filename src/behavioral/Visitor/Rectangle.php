@@ -13,7 +13,7 @@ class Rectangle implements GeometricShape
 
 	public function accept(ShapesPropertiesInterface $visitor): string
 	{
-		$str = $visitor.calculateRectangleProperties(width:$this->width,height:$this->height);
+		$str = $visitor->calculateRectangleProperties(width:$this->width,height:$this->height);
 	
 		return $str;
 	}

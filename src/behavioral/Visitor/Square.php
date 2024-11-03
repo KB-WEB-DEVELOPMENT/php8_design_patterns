@@ -12,7 +12,7 @@ class Square implements GeometricShape
 
 	public function accept(ShapesPropertiesInterface $visitor): string 
 	{
-		$str = $visitor.calculateSquareProperties(side:$this->side);
+		$str = $visitor->calculateSquareProperties(side:$this->side);
 	
 		return $str;
 	}

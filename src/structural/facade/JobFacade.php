@@ -23,22 +23,15 @@ class JobFacade
 	
 	public function isPrePaidRequirementMet(string $passwordID,string $address,array $contactInfos,int $amount): bool
         {
-		if ($this->accommodation->showValidIdentity(passwordID:$passwordID)) {
-			if ($this->accommodation->registerAccomodation(passwordID:$passwordID,adress:$address)) {
-				if ($this->accommodation->payDeposit(passwordID:$passwordID,amount:$amount)) {			 
-					if ($this->bank->openBankAccount(passwordID:$passwordID,address:$address,contactInfos:$contactInfos)) {
-						return true;
-					} else {
-						return false;
-					}					
-			        } else {
-					return false;
-			        }   				
-		          } else {
-			 	 return false;
-			 }
-	          } else {
-		   return  false;
-	       }
+	     	if (!$this->accommodation->showValidIdentity(passwordID:$passwordID))
+		  return false;
+	
+		if (!$this->accommodation->registerAccomodation(passwordID:$passwordID,adress:$address))
+		  return false;
+	
+		if (!$this->accommodation->payDeposit(passwordID:$passwordID,amount:$amount))
+		  return false;
+		
+		return $this->bank->openBankAccount(passwordID:$passwordID,address:$address,contactInfos:$contactInfos);
         }		
 }

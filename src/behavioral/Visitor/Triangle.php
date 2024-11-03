@@ -14,7 +14,7 @@ class Triangle implements GeometricShape
 
 	public function accept(ShapesPropertiesInterface $visitor): string 
 	{
-		$str = $visitor.calculateTriangleProperties(side1:$this->side1,side2:$this->side2,side3:$this->side3);
+		$str = $visitor->calculateTriangleProperties(side1:$this->side1,side2:$this->side2,side3:$this->side3);
 	
 		return $str;
 	}

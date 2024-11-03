@@ -72,7 +72,7 @@ class ObserverTest extends TestCase
 		
 		$exp = 'Observer 1 notified with new state: state trying to notify all observers.';
 		
-		$this->assertSame($exp,$res);
+		$this->assertSame($exp,$str);
 	
 	}	
 

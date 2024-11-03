@@ -12,7 +12,7 @@ class Disk implements GeometricShape
 
 	public function accept(ShapesPropertiesInterface $visitor): string
 	{
-		$str = $visitor.calculateDiskProperties(radius:$this->radius);
+		$str = $visitor->calculateDiskProperties(radius:$this->radius);
 	
 		return $str;
 	}

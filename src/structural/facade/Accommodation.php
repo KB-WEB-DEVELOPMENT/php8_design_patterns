@@ -8,7 +8,7 @@ interface Accommodation
 {
 	public function showValidIdentity(string $passwordID): bool;
 	
-	public function registerAccomodation(string $passwordID,string $address): bool;
+	public function registerAccommodation(string $passwordID,string $address): bool;
 	
 	public function payDeposit(string $passwordID,int $amount): bool;
 

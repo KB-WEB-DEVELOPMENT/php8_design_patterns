@@ -26,7 +26,7 @@ class JobFacade
 	     	if (!$this->accommodation->showValidIdentity(passwordID:$passwordID))
 		  return false;
 	
-		if (!$this->accommodation->registerAccomodation(passwordID:$passwordID,adress:$address))
+		if (!$this->accommodation->registerAccommodation(passwordID:$passwordID,adress:$address))
 		  return false;
 	
 		if (!$this->accommodation->payDeposit(passwordID:$passwordID,amount:$amount))

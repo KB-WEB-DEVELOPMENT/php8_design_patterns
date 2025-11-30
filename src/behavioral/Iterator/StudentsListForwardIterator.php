@@ -13,9 +13,8 @@ class StudentsListForwardIterator
 	){}
 	
 	public function getCurrentStudent(): object|null
-	{
-        
-                $res = array_key_exists($this->currentArrayIndex,$this->studentsList) ? $this->studentsList[$this->currentArrayIndex] : null;
+	{      
+        $res = array_key_exists($this->currentArrayIndex,$this->studentsList) ? $this->studentsList[$this->currentArrayIndex] : null;
 				   
 		return $res;               		
 	}	

@@ -13,7 +13,7 @@ class StudentsList {
 	     $student =  is_array($this->studentsArray[$arrayIndex]) ? $this->studentsArray[$arrayIndex] : false;
 	  
 	     return $student;		  
-        }
+    }
     
 	public function addStudent(Student $newStudent): bool
 	{
@@ -32,7 +32,7 @@ class StudentsList {
 
 		$arrayIndex =  array_search($studentName, array_column($this->studentsArray,'name'));
 
-                if (!is_bool($arrayIndex)) {
+        if (!is_bool($arrayIndex)) {
 			
 			unset($this->studentsArray[$arrayIndex]);
 			
@@ -42,7 +42,7 @@ class StudentsList {
 		}	
 
 		return false;
-         }
+    }
 	
 	public function countStudents(): int
 	{

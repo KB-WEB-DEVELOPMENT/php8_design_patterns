@@ -18,7 +18,7 @@ class CommandTest extends TestCase
 
 		$dc = new DateCommand(Receiver:$receiver);
 
-    		$invoker->setCommand(Command:$dc);
+    	$invoker->setCommand(Command:$dc);
 		$invoker->run();
 		
 		$dt = new DateTime();

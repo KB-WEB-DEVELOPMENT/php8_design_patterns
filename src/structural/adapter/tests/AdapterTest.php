@@ -11,12 +11,10 @@ use php8_design_patterns\Structural\Adapter\App;
 use PHPUnit\Framework\TestCase;
 
 class AdapterTest extends TestCase
-{
-	
+{	
 	public function testCanGetWindowsCommandInfos:void
 	{
-
-                $str = 'ren | Example: ren file1.txt file2.txt';
+        $str = 'ren | Example: ren file1.txt file2.txt';
 		
 		$w = new WindowsCommandsAnalyzer();
 		
@@ -27,7 +25,7 @@ class AdapterTest extends TestCase
 
 	public function testCanGetLinuxCommandInfos:void
 	{
-                $str = 'mv | Example: mv fileold.txt filenew.txt';
+        $str = 'mv | Example: mv fileold.txt filenew.txt';
 		
 		$w = new LinuxCommandsAnalyzer();
 		
@@ -50,5 +48,4 @@ class AdapterTest extends TestCase
 		
 		$this->assertSame($str2,'grep | Example: grep test file1.txt');		
 	}
-
 }

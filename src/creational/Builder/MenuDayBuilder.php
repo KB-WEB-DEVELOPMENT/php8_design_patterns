@@ -16,7 +16,7 @@ class MenuDayBuilder implements Builder
 	
 	public function createSustenance(): void
 	{
-		 $this->menuDay = new MenuDay();
+		$this->menuDay = new MenuDay();
 	}
 	
 	public function addDrink(): void
@@ -40,7 +40,8 @@ class MenuDayBuilder implements Builder
 	}
 	
 	public function getSustenance(): Sustenance
-        {
+    {
 		return $this->menuDay;
 	}
  }
+

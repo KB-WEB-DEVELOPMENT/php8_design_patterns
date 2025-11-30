@@ -21,7 +21,7 @@ class IteratorTest extends TestCase
 		
 		$studentsList = new StudentsList();
 		
-                $studentsList->addStudent(Student:$newStudent1);
+        $studentsList->addStudent(Student:$newStudent1);
 		$studentsList->addStudent(Student:$newStudent2);
 		$studentsList->addStudent(Student:$newStudent3);
 		
@@ -34,7 +34,6 @@ class IteratorTest extends TestCase
 		$exp_arr = ['Name:John1 Doe1 , Ranking:24','Name:John2 Doe2 , Ranking:16','Name:John3 Doe3 , Ranking:3'];
 
 		$this->assertSame($exp_arr,$studentsInfosArray);	
-   
 	}
 
 	public function testCanIterateAfterRemoving():void
@@ -44,7 +43,7 @@ class IteratorTest extends TestCase
 		
 		$studentsList = new StudentsList();
 		
-                $studentsList->addStudent(Student:$newStudent1);
+        $studentsList->addStudent(Student:$newStudent1);
 		$studentsList->addStudent(Student:$newStudent2);
 		
 		$studentsList->removeStudent(Student:$newStudent1);
@@ -59,7 +58,7 @@ class IteratorTest extends TestCase
 		
 		$this->assertSame($exp_arr,$studentsInfosArray);
 		
-        }
+    }
 	
 	public function testCanGetNextStudent():void
 	{
@@ -68,7 +67,7 @@ class IteratorTest extends TestCase
 		
 		$studentsList = new StudentsList();
 		
-                $studentsList->addStudent(Student:$newStudent1);
+        $studentsList->addStudent(Student:$newStudent1);
 		
 		$it = new StudentsListForwardIterator(StudentsList:$studentsList);
 		
@@ -90,13 +89,13 @@ class IteratorTest extends TestCase
 			
 	}
 
-          public function testCanGetPreviousStudent():void
-	  {
+    public function testCanGetPreviousStudent():void
+	{
 		$newStudent1 = new Student(name:'John1 Doe1',ranking:24);
 		$newStudent2 = new Student(name:'John2 Doe2',ranking:16);
 		
 		$studentsList = new StudentsList();
-                $studentsList->addStudent(Student:$newStudent1);
+        $studentsList->addStudent(Student:$newStudent1);
 		$studentsList->addStudent(Student:$newStudent2);
 		
 		$it = new StudentsListBackwardIterator(StudentsList:$studentsList);
@@ -113,5 +112,5 @@ class IteratorTest extends TestCase
 		$exp = 'Name:John1 Doe1 , Ranking:24'; 	
 
 		$this->assertSame($exp,$res);		
-           }	
+    }	
 }

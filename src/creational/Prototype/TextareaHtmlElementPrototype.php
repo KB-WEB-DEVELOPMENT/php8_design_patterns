@@ -7,10 +7,10 @@ class TextareaHtmlElementPrototype extends HtmlElementPrototype
 {
 	
 	public function __construct(
-          public string $elementId,
-          public string $elementName, 
-	  public array $elementConfig,
-	) {}
+    	public string $elementId,
+        public string $elementName, 
+	  	public array $elementConfig,
+	){}
 
 	public function __clone();
 
@@ -40,26 +40,26 @@ class TextareaHtmlElementPrototype extends HtmlElementPrototype
 			   $rows = (is_int($this->elementConfig["rows"]) && $this->elementConfig["rows"] > 0) ? $this->elementConfig["rows"] : 50;			  
 			   $wrap = in_array($this->elementConfig["wrap"],array("soft","hard")) ? $this->elementConfig["wrap"] : null; 
 		  
-		          $htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" ';
-		          $htmlCode .= '&nbsp;'.$autofocus;
-                          $htmlCode .= '&nbsp;'.$disabled;
-			  $htmlCode .= '&nbsp;'.$readonly;
-			  $htmlCode .= '&nbsp;'.$required;			  
-			  $htmlCode .= '&nbsp;rows="' . $rows . '"';
-			  $htmlCode .= '&nbsp;cols="' . $cols . '"';
+		       $htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" ';
+		       $htmlCode .= '&nbsp;'.$autofocus;
+               $htmlCode .= '&nbsp;'.$disabled;
+			   $htmlCode .= '&nbsp;'.$readonly;
+			   $htmlCode .= '&nbsp;'.$required;			  
+			   $htmlCode .= '&nbsp;rows="' . $rows . '"';
+			   $htmlCode .= '&nbsp;cols="' . $cols . '"';
 			  
-			  $htmlCode  .= !empty($wrap) ? '&nbsp;wrap="' . $wrap .  '"'  : null;   
-			  $htmlCode  .= !empty($placeholder) ? '&nbsp;placeholder="' . $placeholder .  '"'  : null;
-			  $htmlCode  .= !empty($maxlength) ? '&nbsp;maxlength="' . $maxlength .  '"'  : null;
-			  $htmlCode  .= !empty($dirname) ? '&nbsp;dirname="' . $dirname .  '"'  : null;
+			   $htmlCode  .= !empty($wrap) ? '&nbsp;wrap="' . $wrap .  '"'  : null;   
+			   $htmlCode  .= !empty($placeholder) ? '&nbsp;placeholder="' . $placeholder .  '"'  : null;
+			   $htmlCode  .= !empty($maxlength) ? '&nbsp;maxlength="' . $maxlength .  '"'  : null;
+			   $htmlCode  .= !empty($dirname) ? '&nbsp;dirname="' . $dirname .  '"'  : null;
 			  
-			  $htmlCode .= '>YOUR CONTENT HERE</textarea>';
+			   $htmlCode .= '>YOUR CONTENT HERE</textarea>';
 			  
-			  return $htmlCode; 
+			   return $htmlCode; 
 			  
-		  } else {
+		    } else {
 			  
-			 $htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" rows="50" cols="50">YOUR CONTENT HERE</textarea>'; 	  
+			 	$htmlCode = '<textarea id="' . $this->elementId . '" name="' . $this->elementName . '" rows="50" cols="50">YOUR CONTENT HERE</textarea>'; 	  
   
 			 return $htmlCode; 
 		  }		

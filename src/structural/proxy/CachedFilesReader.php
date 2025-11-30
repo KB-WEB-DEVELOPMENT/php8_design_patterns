@@ -11,39 +11,36 @@ class CachedFilesReader implements FilesReaderLib
     private array $fileInfosArray = [];
 	
     public function __construct(
-      private string $filename,
-      protected FilesReader $filesReader
+    	private string $filename,
+      	protected FilesReader $filesReader
     ){}
 			
     public function getFileInfos(): array
     {
        if (in_array($this->filename,$this->cachedFiles)) {
 
-          $this->fileInfosArray = pathinfo($this->filename);
-	  $this->fileInfosArray["filesize"] = filesize($this->filename);
+    		$this->fileInfosArray = pathinfo($this->filename);
+		   
+	  		$this->fileInfosArray["filesize"] = filesize($this->filename);
 			
        }  else {
 
 	            if (($filesReader->isLocalFile() === true) && ($filesReader->isReadableFile() === true)) {
 					
-	               $this->fileInfosArray =  $filesReader->getFileInfos();
+	            	$this->fileInfosArray =  $filesReader->getFileInfos();
 										
-	            }  
-	      
-	            elseif (($filesReader->isLocalFile() === false) && ($filesReader->isReadableFile() === true)) {	
+	            }  elseif (($filesReader->isLocalFile() === false) && ($filesReader->isReadableFile() === true)) {	
 				
-		       $this->fileInfosArray =  $filesReader->copyRemoteFile() ? $filesReader->getFileInfos() : [];		
+		       		$this->fileInfosArray =  $filesReader->copyRemoteFile() ? $filesReader->getFileInfos() : [];		
 							 					
-	            } 
-	      
-	            else {
+	            }  else {
 
-		      $this->fileInfosArray = [];
+		      		$this->fileInfosArray = [];
 	            }
-			
-	     }
+	    }
 		
-	     return $this->fileInfosArray;
-   }
-
+		return $this->fileInfosArray;
+     
+	}
 }	
+
